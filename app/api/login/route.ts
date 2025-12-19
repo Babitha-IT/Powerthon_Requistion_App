@@ -65,7 +65,7 @@ export async function POST(request: NextRequest) {
           client.release()
         }
       } catch (error) {
-        console.log('Database not available for login, falling back to mock data:', error.message)
+        console.log('Database not available for login, falling back to mock data:')
         setDatabaseStatus(false)
       }
     }

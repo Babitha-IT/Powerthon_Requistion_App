@@ -52,7 +52,7 @@ export async function GET(request: NextRequest) {
           client.release()
         }
       } catch (error) {
-        console.log('Database not available, falling back to mock data:', error.message)
+        console.log('Database not available, falling back to mock data:')
         setDatabaseStatus(false)
       }
     }
@@ -149,7 +149,7 @@ export async function POST(request: NextRequest) {
           client.release()
         }
       } catch (error) {
-        console.log('Database not available, falling back to mock data:', error.message)
+        console.log('Database not available, falling back to mock data:')
         setDatabaseStatus(false)
       }
     }

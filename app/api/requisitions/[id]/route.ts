@@ -241,7 +241,7 @@ export async function PUT(
         }
       } catch (error) {
         console.log('=== DATABASE ERROR ===')
-        console.log('Database error details:', error.message)
+        console.log('Database error details:')
         console.log('Falling back to mock data')
         setDatabaseStatus(false)
       }

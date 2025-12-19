@@ -44,7 +44,7 @@ export async function GET() {
           client.release()
         }
       } catch (error) {
-        console.log('Database not available for softwares, falling back to mock data:', error.message)
+        console.log('Database not available for softwares, falling back to mock data:')
         setDatabaseStatus(false)
       }
     }

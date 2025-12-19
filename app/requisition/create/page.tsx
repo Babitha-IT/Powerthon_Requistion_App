@@ -118,7 +118,7 @@ export default function CreateRequisitionPage() {
     }
   }
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target
     setFormData(prev => ({ ...prev, [name]: value }))
     // Clear error when user starts typing
@@ -431,9 +431,9 @@ export default function CreateRequisitionPage() {
                   } ${(isEditMode || isApproved) ? 'bg-gray-100 text-gray-500 cursor-not-allowed' : ''}`}
                 >
                   <option value="">Select Software...</option>
-                  {softwares.map((software) => (
+                  {softwares.map((software:any) => (
                     <option key={software.id} value={software.name}>
-                      {software.name} {software.version && `(v${software.version})`}
+                      {software.name}
                     </option>
                   ))}
                 </select>

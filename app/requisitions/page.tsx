@@ -57,8 +57,8 @@ export default function ViewRequisitionsPage() {
         (filters.software === '' || 
          (req.software && req.software.toLowerCase().includes(filters.software.toLowerCase()))) &&
         (filters.status === '' || 
-         (filters.status === 'pending' && req.status === 1) ||
-         (filters.status === 'approved' && req.status === 2)) &&
+         (filters.status === 'pending' && req.status === "1") ||
+         (filters.status === 'approved' && req.status === "2")) &&
         (filters.createdAt === '' || 
          new Date(req.createdAt).toLocaleDateString().includes(filters.createdAt)) &&
         (filters.approvedOn === '' || 
@@ -401,12 +401,12 @@ export default function ViewRequisitionsPage() {
                       </td>
                       <td className="px-3 py-2 whitespace-nowrap">
                         <span className={`inline-flex px-2 py-1 text-xs font-medium rounded-full ${
-                          requisition.status === 2 ? 'bg-green-100 text-green-800' :
-                          requisition.status === 1 ? 'bg-yellow-100 text-yellow-800' :
+                          requisition.status === "2" ? 'bg-green-100 text-green-800' :
+                          requisition.status === "1" ? 'bg-yellow-100 text-yellow-800' :
                           'bg-gray-100 text-gray-800'
                         }`}>
-                          {requisition.status === 2 ? 'Approved' :
-                           requisition.status === 1 ? 'Pending' :
+                          {requisition.status === "2" ? 'Approved' :
+                           requisition.status === "1" ? 'Pending' :
                            'Unknown'}
                         </span>
                       </td>
@@ -415,7 +415,7 @@ export default function ViewRequisitionsPage() {
                       </td>
                       <td className="px-3 py-2 whitespace-nowrap">
                         <div className="flex space-x-2">
-                          {(requisition.status === 1 && user?.role?.toLowerCase() === 'employee') ? (
+                          {(requisition.status === "1" && user?.role?.toLowerCase() === 'employee') ? (
                             <Link
                               href={`/requisition/create?id=${requisition.id}`}
                               className="inline-flex items-center px-2 py-1 border border-transparent text-xs font-medium rounded text-blue-600 bg-blue-100 hover:bg-blue-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
@@ -430,7 +430,7 @@ export default function ViewRequisitionsPage() {
                               View Details
                             </Link>
                           )}
-                          {user?.role === 'hod' && requisition.status === 1 && (
+                          {user?.role === 'hod' && requisition.status === "1" && (
                             <button
                               onClick={() => handleApprove(requisition.id)}
                               disabled={approving === requisition.id}
@@ -443,7 +443,7 @@ export default function ViewRequisitionsPage() {
                               {approving === requisition.id ? 'Approving...' : 'Approve'}
                             </button>
                           )}
-                          {user?.role === 'hod' && requisition.status === 2 && (
+                          {user?.role === 'hod' && requisition.status === "2" && (
                             <span className="inline-flex items-center px-2 py-1 border border-transparent text-xs font-medium rounded text-green-700 bg-green-100">
                               ✓ Approved
                             </span>

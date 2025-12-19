@@ -166,7 +166,7 @@ export async function initializeDatabase() {
       `)
     } catch (error) {
       // Column might already exist, ignore error
-      console.log('Software column already exists or error adding it:', error.message)
+      console.log('Software column already exists or error adding it:')
     }
     
     try {
@@ -176,7 +176,7 @@ export async function initializeDatabase() {
       `)
     } catch (error) {
       // Column might already exist, ignore error
-      console.log('Software_id column already exists or error adding it:', error.message)
+      console.log('Software_id column already exists or error adding it:')
     }
 
     // Create softwares table if it doesn't exist
@@ -256,7 +256,7 @@ export async function initializeDatabase() {
         ADD COLUMN IF NOT EXISTS currencycode VARCHAR(10) DEFAULT 'INR'
       `)
     } catch (error) {
-      console.log('Software columns already exist or error adding them:', error.message)
+      console.log('Software columns already exist or error adding them:')
     }
     
     // Insert test software data if none exist - first check if we have data using software_name column
