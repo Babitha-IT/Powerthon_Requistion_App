@@ -222,9 +222,9 @@ export default function AnalyticsPage() {
     ]
 
     const allocatedChart = {
-      labels: allocatedData.map(item => `${item.pod} (Allocated)`),
+      labels: allocatedData.map((item:any) => `${item.pod} (Allocated)`),
       datasets: [{
-        data: allocatedData.map(item => item.allocated),
+        data: allocatedData.map((item :any)=> item.allocated),
         backgroundColor: colors,
         borderWidth: 2
       }]
