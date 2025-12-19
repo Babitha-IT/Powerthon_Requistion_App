@@ -231,9 +231,9 @@ export default function AnalyticsPage() {
     }
 
     const spentChart = {
-      labels: spentData.map(item => `${item.pod} (Spent)`),
+      labels: spentData.map((item :any) => `${item.pod} (Spent)`),
       datasets: [{
-        data: spentData.map(item => item.spent),
+        data: spentData.map((item :any) => item.spent),
         backgroundColor: colors.map(color => color + '80'), // Semi-transparent
         borderWidth: 2
       }]
